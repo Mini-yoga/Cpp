@@ -15,33 +15,33 @@ int main(int argc, const char * argv[]) {
     vector<int> numberVect1(100);
     vector<int> numberVect2(100);
     vector<int> numberVect3(200);
-    int i=1,j=0,k=0;
+    int i=1,j=0,k=0,l=0;
 
     
-    while (argv[i] != "]") {
-        if(argv[i] != "["){
-            cout<<"argv:"<<i<<endl;
+    while (*argv[i] != ']') {
+        if(*argv[i] != '['){
             numberVect1[k] = atoi(argv[i]);
-            cout<<"numberVect1:"<<k<<":"<<numberVect1[k]<<endl;
             k++;
         }
         i++;
     }
     i++;
-    while (argv[i] != "]") {
-        if(argv[i] != "["){
+    k--;
+    while (*argv[i] != ']') {
+        if(*argv[i] != '['){
             numberVect2[j] = atoi(argv[i]);
-            //cout<<"numberVect2:"<<numberVect2[j]<<endl;
             j++;
         }
         i++;
     }
+    j--;
     
     int p = k;
     while (j>=0) {
         while (k>=0) {
             if(numberVect1[k] == numberVect2[j]){
-                numberVect3.push_back(numberVect2[j]);
+                numberVect3[l] = numberVect2[j];
+                l++;
                 break;
             }
             k--;
@@ -49,8 +49,10 @@ int main(int argc, const char * argv[]) {
         k = p;
         j--;
     }
+    numberVect3.resize(l);
     sort(numberVect3.begin(), numberVect3.end());
-    copy(numberVect3.begin(), numberVect3.end(),ostream_iterator<int>(cout));
+    numberVect3.erase(unique(numberVect3.begin(), numberVect3.end()));
+    copy(numberVect3.begin(), numberVect3.end(),ostream_iterator<int>(cout,"\t"));
     
     return 0;
 }
