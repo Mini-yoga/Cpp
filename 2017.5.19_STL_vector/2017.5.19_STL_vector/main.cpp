@@ -16,7 +16,7 @@ int main(int argc, const char * argv[]) {
     vector<int> numberVect2(100);
     vector<int> numberVect3(200);
     int i=1,j=0,k=0,l=0;
-
+    
     
     while (*argv[i] != ']') {
         if(*argv[i] != '['){
@@ -49,10 +49,15 @@ int main(int argc, const char * argv[]) {
         k = p;
         j--;
     }
-    numberVect3.resize(l);
-    sort(numberVect3.begin(), numberVect3.end());
-    numberVect3.erase(unique(numberVect3.begin(), numberVect3.end()));
-    copy(numberVect3.begin(), numberVect3.end(),ostream_iterator<int>(cout,"\t"));
+    if(l==0){
+        cout<<"no common elements"<<endl;
+    }
+    else{
+        numberVect3.resize(l);
+        sort(numberVect3.begin(), numberVect3.end());
+        numberVect3.erase(unique(numberVect3.begin(), numberVect3.end()));
+        copy(numberVect3.begin(), numberVect3.end(),ostream_iterator<int>(cout,"\t"));
+    }
     
     return 0;
 }
