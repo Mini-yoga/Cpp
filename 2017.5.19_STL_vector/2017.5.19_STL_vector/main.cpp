@@ -12,15 +12,15 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    vector<int> numberVect1(100);
-    vector<int> numberVect2(100);
-    vector<int> numberVect3(200);
+    vector<int> numberVect1;
+    vector<int> numberVect2;
+    vector<int> numberVect3;
     int i=1,j=0,k=0,l=0;
     
     
     while (*argv[i] != ']') {
         if(*argv[i] != '['){
-            numberVect1[k] = atoi(argv[i]);
+            numberVect1.push_back(atoi(argv[i]));
             k++;
         }
         i++;
@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
     k--;
     while (*argv[i] != ']') {
         if(*argv[i] != '['){
-            numberVect2[j] = atoi(argv[i]);
+            numberVect2.push_back(atoi(argv[i]));
             j++;
         }
         i++;
@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
     while (j>=0) {
         while (k>=0) {
             if(numberVect1[k] == numberVect2[j]){
-                numberVect3[l] = numberVect2[j];
+                numberVect3.push_back(numberVect2[j]);
                 l++;
                 break;
             }
