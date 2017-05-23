@@ -1,0 +1,3 @@
+#cmakedefine USE1
+#cmakedefine USE2
+#cmakedefine USE3
