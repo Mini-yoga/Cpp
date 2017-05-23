@@ -12,22 +12,48 @@
 #include <map>
 #include <vector>
 #include "PrintBase.hpp"
-#include "config.h"
+//#include "config.h"
 int main(int argc, const char * argv[]) {
     auto i=0;
     PrintBase * A;
-  
-#ifdef USE1
-        A = new printA();
-        A->fetch(argc,argv);
-#endif
-#ifdef USE2
+    cout<<"Enter Alorithem Number 1,2,3:"<<endl;
+    cin>>i;
+    if(i==1){
+    A = new printA();
+        A->fetch(argc,argv);}
+    else if (i==2){
+
     A = new printB();
     A->fetch(argc,argv);
-#endif
-#ifdef USE3
+    }
+    else if(i==3){
+    
     A = new printC();
-    A->fetch(argc,argv);
-#endif
+        A->fetch(argc,argv);
+    }
+    else{
+        cout<<"Wrong Alorithem Number!"<<endl;
+    }
+
     return 0;
+    
+    
+    
+    
+    
+//#ifdef USE1
+//        A = new printA();
+//        A->fetch(argc,argv);
+//#endif
+//#ifdef USE2
+//    A = new printB();
+//    A->fetch(argc,argv);
+//#endif
+//#ifdef USE3
+//    A = new printC();
+//    A->fetch(argc,argv);
+//#endif
+//    return 0;
+//    
+    
 }
