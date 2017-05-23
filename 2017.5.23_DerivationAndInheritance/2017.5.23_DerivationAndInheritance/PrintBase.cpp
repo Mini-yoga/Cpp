@@ -113,7 +113,7 @@ void printC::fetch(int argc, const char * argv[]){
     }
     vector<PAIR> aricleVector(article.begin(),article.end());
     sort(aricleVector.begin(), aricleVector.end(),CmpByValue());
-    while (m<10 && p<article.size()) {
+    while (m<5 && p<article.size()) {
         if(aricleVector[p].first != "." && aricleVector[p].first != "," && aricleVector[p].first != "?" && aricleVector[p].first != "!" && aricleVector[p].first != "、"){
             cout<<aricleVector[p].first<<":"<<aricleVector[p].second<<endl;
             m++;
