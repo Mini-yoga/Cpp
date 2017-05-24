@@ -20,7 +20,9 @@ int main(int argc, const char * argv[]) {
     cin>>i;
     if(i==1){
     A = new printA();
-        A->fetch(argc,argv);}
+        A->fetch(argc,argv);
+        
+    }
     else if (i==2){
 
     A = new printB();
@@ -34,26 +36,10 @@ int main(int argc, const char * argv[]) {
     else{
         cout<<"Wrong Alorithem Number!"<<endl;
     }
+    delete A;
 
     return 0;
     
     
-    
-    
-    
-//#ifdef USE1
-//        A = new printA();
-//        A->fetch(argc,argv);
-//#endif
-//#ifdef USE2
-//    A = new printB();
-//    A->fetch(argc,argv);
-//#endif
-//#ifdef USE3
-//    A = new printC();
-//    A->fetch(argc,argv);
-//#endif
-//    return 0;
-//    
     
 }
