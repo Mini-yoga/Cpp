@@ -9,23 +9,31 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <cstring>
+#include <sstream>
 #include <map>
-#include <vector>
 #include "xml.hpp"
-using namespace std;
 
 int main(int argc, const char * argv[]) {
     
     //string filePath = argv[1];
-    string filePath = "/Users/MiniYoga/Documents/Cpp/2017.6.1_XML/2017.6.1_XML/XML.xml";
-    ifstream file;
-    XmlData xmlObject;
-    file.open(filePath,ios::in);
-    if (file.is_open()){
-            xmlObject.dump(file);
+    std::string filePath = "/Users/MiniYoga/Documents/Cpp/2017.6.1_XML/2017.6.1_XML/XML.xml";
+    std::ifstream file(filePath);
+    std::stringstream buff;
+    std::string str;
+    Type type,returnType;
+    buff<<file.rdbuf();
+    std::string fileString(buff.str());
+    if(fileString.find('?xml') != -1){
+        int i = fileString.find('?>');
+        str = fileString.substr(i+2);
+        std::cout<<str;
     }
-    file.close();
+    else{
+        str = fileString;
+    }
+    returnType.type = type.parse(str);
     
 }
+
+
 

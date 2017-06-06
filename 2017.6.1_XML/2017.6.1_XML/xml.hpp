@@ -9,21 +9,40 @@
 #ifndef xml_hpp
 #define xml_hpp
 #include <stdio.h>
+#include <string>
+#include <iostream>
 #include <map>
-using namespace std;
+class Type;
+class Type{
+public:
+    enum T{
+        String,
+        Object
+    }type;
+    
+    Type(){};
+    T parse(std::string str);
+    Type(const Type &obj);
+    virtual ~Type();
 
-//template <typename T>
+private:
+    //Type *type = new Type();
+    std::string m_string;
+    std::map<std::string,Type> m_type;
+    
+};
+
+
 class XmlData{
 public:
     
     XmlData();
-    void dump(ifstream &file);
-    const string operator[](const string &obj)const;
-                       
+    
+    Type parse(std::ifstream &file);
+    
+    //const string operator[](const string &obj)const;
     XmlData(const XmlData &obj);
     virtual ~XmlData();
-private:
-     map<string,string> xmlMap;
 };
 
 

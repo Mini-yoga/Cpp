@@ -1,8 +1,8 @@
+<?xml version="1.0"?>
 <note>
     <to>George</to>
     <from>John
-        <heads>:</heads>
-        <heads>1</heads>
+        <hands>:</hands>
     </from>
     <heading>Reminder</heading>
     <msg>Don't forget the meeting!</msg>
