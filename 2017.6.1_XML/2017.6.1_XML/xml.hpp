@@ -12,23 +12,22 @@
 #include <string>
 #include <iostream>
 #include <map>
-class Type;
-class Type{
+class XMLData;
+class XMLData{
 public:
     enum T{
         String,
         Object
-    }type;
-    
-    Type(){};
+    };
+    XMLData(){};
     T parse(std::string str);
-    Type(const Type &obj);
-    virtual ~Type();
+    XMLData(const XMLData &obj);
+    virtual ~XMLData();
 
 private:
-    //Type *type = new Type();
+    T t,e;
     std::string m_string;
-    std::map<std::string,Type> m_type;
+    std::map<std::string,T> m_type;
     
 };
 
@@ -38,7 +37,7 @@ public:
     
     XmlData();
     
-    Type parse(std::ifstream &file);
+    XMLData parse(std::ifstream &file);
     
     //const string operator[](const string &obj)const;
     XmlData(const XmlData &obj);

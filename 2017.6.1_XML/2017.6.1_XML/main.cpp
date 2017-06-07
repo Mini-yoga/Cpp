@@ -20,18 +20,19 @@ int main(int argc, const char * argv[]) {
     std::ifstream file(filePath);
     std::stringstream buff;
     std::string str;
-    Type type,returnType;
+    XMLData type;
+    XMLData::T returnType;
     buff<<file.rdbuf();
     std::string fileString(buff.str());
     if(fileString.find('?xml') != -1){
-        int i = fileString.find('?>');
-        str = fileString.substr(i+2);
-        std::cout<<str;
+        unsigned long i = fileString.find('?>');
+        str = fileString.substr(i+3);
+        //std::cout<<str;
     }
     else{
         str = fileString;
     }
-    returnType.type = type.parse(str);
+    returnType = type.parse(str);
     
 }
 
