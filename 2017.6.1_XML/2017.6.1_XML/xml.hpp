@@ -20,30 +20,18 @@ public:
         Object
     };
     XMLData(){};
-    T parse(std::string str);
-    XMLData(const XMLData &obj);
+    XMLData parse(std::string str);
+    XMLData addMap(XMLData xmlData,std::string node,XMLData data);
+    void operator[](std::string inStr);
+    //void toNode(std::string inStr,std::string &searchNode,std::string &leftStr,int i);
+    //XMLData(const XMLData &obj);
     virtual ~XMLData();
-
 private:
-    T t,e;
+    T t;
     std::string m_string;
-    std::map<std::string,T> m_type;
-    
+    std::map<std::string,XMLData> m_map;
+    std::map<std::string,int> m_map_count;
 };
-
-
-class XmlData{
-public:
-    
-    XmlData();
-    
-    XMLData parse(std::ifstream &file);
-    
-    //const string operator[](const string &obj)const;
-    XmlData(const XmlData &obj);
-    virtual ~XmlData();
-};
-
 
 
 #endif /* xml_hpp */

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <note>
-    <to ...../>
-    <to>George</to>
-    <from>John
-        <hands>:</hands>
+    <to>
+        <heading>Reminder</heading>
+    </to>
+    <from>
+        <heading>Reminder</heading>
     </from>
-    <heading>Reminder</heading>
     <msg>Don't forget the meeting!</msg>
     <msg>We're all waiting for you!</msg>
 </note>
