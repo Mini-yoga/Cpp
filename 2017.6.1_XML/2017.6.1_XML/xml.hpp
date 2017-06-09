@@ -22,7 +22,7 @@ public:
     XMLData(){};
     XMLData parse(std::string str);
     XMLData addMap(XMLData xmlData,std::string node,XMLData data);
-    void operator[](std::string inStr);
+    std::string operator[](std::string inStr);
     //void toNode(std::string inStr,std::string &searchNode,std::string &leftStr,int i);
     //XMLData(const XMLData &obj);
     virtual ~XMLData();

@@ -36,12 +36,15 @@ int main(int argc, const char * argv[]) {
     
     char buffer[100];
     std::cout<<"Enter search:"<<std::endl;
-    std::cin.getline(buffer,100,'\n');
-    std::string inStr = buffer;
+   // std::cin.getline(buffer,100,'\n');
+   // std::string inStr = buffer;
+    std::string inStr;
+    std::getline(std::cin,inStr);
     int index1 = inStr.find_first_of("[");
     int index2 = inStr.find_last_of("]");
     inStr = inStr.substr(index1,index2-index1+1);
-    returnData[inStr];
+    std::string s = returnData[inStr];
+    std::cout<<s<<std::endl;
 }
 
 

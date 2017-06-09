@@ -124,25 +124,28 @@ XMLData::~XMLData(){
     
 }
 
-void XMLData::operator[](std::string inStr){
+std::string XMLData::operator[](std::string inStr){
     std::string searchNode,leftStr;
     int index1 = inStr.find_first_of("[");
     int index2 = inStr.find_first_of("]");
     int index3 = inStr.find_last_of("]");
-    searchNode = inStr.substr(index1+1,index2-index1-1);
+    searchNode = inStr.substr(index1+2,index2-index1-3);
     leftStr = inStr.substr(index2+1,index3-index2);
 
-    if(t == String){
-        std::cout<<m_string<<std::endl;
-    }
-    else{
+//    if(t == String){
+//        std::cout<<m_string<<std::endl;
+//        return m_string;
+//    }
+    //else{
         if(leftStr != ""){
-            m_map[searchNode][leftStr];
+           std::string s = m_map[searchNode][leftStr];
+            return s;
         }
         else{
-        std::cout<<m_map[searchNode].m_string<<std::endl;
+        //std::cout<<m_map[searchNode].m_string<<std::endl;
+            return m_map[searchNode].m_string;
         }
-    }
+   // }
     
 
 }
